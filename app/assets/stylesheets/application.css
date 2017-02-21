@@ -77,3 +77,16 @@ div#lab div.lab_list table th{
   padding-left: 1em;
   padding-right: 1em;
 }
+
+div#lab div.lab_list table th div.colored{
+  color: red;
+}
+
+div.student_list table{
+    text-align: center;
+    margin-right: 2em;
+}
+div.student_list table th{
+  padding-left: 1em;
+  padding-right: 1em;
+}

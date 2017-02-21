@@ -9,37 +9,45 @@
       <% @labs.each do |lab| %>
       <div class="col-md-4 col-xs-6">
         <div class="lab_detail">
-        <h2><%= lab.name %>研究室</h2>
-        <h3>配属人数: <%= lab.cap %></h3>
-        <p><%= lab.info %></p>
-        <table>
-          <tr>
-            <td>名前(匿名)</td>
-            <td>第2希望</td>
-            <td>順位</td>
-          </tr>
-          <% @students.each do |student| %>
-          <% if student.first == lab.id %>
-          <tr>
-            <th>
-              <%= student.name  %>
+          <h2><%= lab.name %>研究室</h2>
+          <h3>配属人数: <%= lab.cap %></h3>
+          <p><%= lab.info %></p>
+          <table>
+            <tr>
+              <td>名前(匿名)</td>
+              <td>第2希望</td>
+              <td>順位</td>
+            </tr>
+            <% @num = 0 %>
+            <% @students.each do |student| %>
+            <% if student.first == lab.id %>
+            <% @num += 1 %>
+            <tr>
+              <th>
+                <% if @num > lab.cap %>
+                <div class="colored">
+                  <% end %>
+                  <%= student.name  %>
+                  <% if @num > lab.cap %>
+                </div>
+                <% end %>
+              </th>
+              <th>
+                <% if student.second==nil%>未指定<%else%><%= Lab.find(student.second).name %>研究室<%end%>
+              </th>
+              <th>
+                <%= student.rank  %>
+              </th>
             </th>
-            <th>
-              <% if student.second==nil%>未指定<%else%><%= Lab.find(student.second).name %>研究室<%end%>
-            </th>
-            <th>
-              <%= student.rank  %>
-            </th>
-          </th>
-          <% end %>
-          <% end %>
-        </table>
-        <%if current_user.id == 1%>
-        <%= link_to 'Show', lab %>
-        <%= link_to 'Edit', edit_lab_path(lab) %>
-        <%= link_to 'Destroy', lab, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%end%>
-      </div>
+            <% end %>
+            <% end %>
+          </table>
+          <%if current_user.id == 1%>
+          <%= link_to 'Show', lab %>
+          <%= link_to 'Edit', edit_lab_path(lab) %>
+          <%= link_to 'Destroy', lab, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%end%>
+        </div>
       </div>
       <% end %>
     </div>

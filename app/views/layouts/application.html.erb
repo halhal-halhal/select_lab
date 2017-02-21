@@ -8,16 +8,17 @@
 </head>
 <body>
   <div id="header_nav">
+    <%= link_to 'トップ', root_path %>
+    <div style="text-align:right">
     <% if user_signed_in? %>
-    <%= link_to 'プロフィール変更', edit_user_registration_path %>
+    <%= link_to 'プロフィール変更', students_path %>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
     <% else %>
     <%= link_to '登録', new_user_registration_path %>
     <%= link_to 'ログイン', new_user_session_path %>
     <% end %>
+        </div>
   </div>
-  <div class="notice"><%= notice %></div>
-  <div class="alert"><%= alert %></div>
   <%= yield %>
 </body>
 </html>

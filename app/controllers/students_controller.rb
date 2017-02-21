@@ -17,6 +17,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
+    @labs = Lab.all
     @student = Student.new
   end
 

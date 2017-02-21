@@ -30,7 +30,7 @@
     <%= f.label :第1希望 %>
     <select name="student[first]" id="student_first">
       <% @labs.each do |lab| %>
-      <option value="<%= lab.id %>"><%= lab.name %>研究室</option>
+      <option <% if student.first == lab.id %> selected <% end %> value="<%= lab.id %>"><%= lab.name %>研究室</option>
       <% end %>
     </select>
   </div>
@@ -39,7 +39,7 @@
     <%= f.label :第2希望 %>
         <select name="student[second]" id="student_second">
           <% @labs.each do |lab| %>
-          <option value="<%= lab.id %>"><%= lab.name %>研究室</option>
+          <option <% if student.second == lab.id %> selected <% end %> value="<%= lab.id %>"><%= lab.name %>研究室</option>
           <% end %>
         </select>
   </div>

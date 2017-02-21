@@ -107,9 +107,11 @@ div.student_list table{
 }
 div.student_list table th{
   padding-left: 1em;
+  text-align: center;
   padding-right: 1em;
 }
 div.student_list table td{
+  text-align: center;
   font-size: 1.1em;
   line-height: 2em;
 }

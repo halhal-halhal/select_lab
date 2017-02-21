@@ -76,8 +76,18 @@ div#lab div.lab_list table{
 }
 
 div#lab div.lab_list table th{
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin: auto;
+  text-align: center;
+  width: 10em;
+}
+div#lab div.lab_list table th.second{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin: auto;
+  text-align: center;
+  width: 14em;
 }
 div#lab div.lab_list table td{
   font-size: 1.2em;

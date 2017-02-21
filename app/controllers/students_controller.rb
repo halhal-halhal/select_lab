@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     unless current_user.id == 1
-      redirect_to :back
+      redirect_to :root
     end
   end
 

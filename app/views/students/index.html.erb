@@ -2,7 +2,7 @@
 <div class="student_list">
 
   <h1>学生情報</h1>
-
+  <hr>
   <table>
     <thead>
       <tr>
@@ -22,8 +22,8 @@
         <td><%= Lab.find(student.first).name %>研究室</td>
         <td><% if student.second==nil%>未指定<%else%><%= Lab.find(student.second).name %>研究室<%end%></td>
         <% if student.third == current_user.id || current_user.id == 1%>
-        <td><%= link_to '編集', edit_student_path(student) %></td>
-        <td><%= link_to '削除', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '[ 編集 ] /', edit_student_path(student) %></td>
+        <td><%= link_to '[ 削除 ]', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
       <% end %>

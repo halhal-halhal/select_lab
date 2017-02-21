@@ -37,6 +37,8 @@ body{
   padding-bottom: 5em;
    background-color: rgba(0,0,0,0.75);
    color: white;
+   font-size: 2em;
+   line-height: 1.2em;
 }
 
 a{
@@ -64,7 +66,7 @@ div#lab div.lab_list{
   text-align: center;
 }
 div#lab div.lab_list div.lab_detail{
-  height: 30em;
+  min-height: 35em;
   border: 1px solid rgba(255,255,255,0.5);
   margin-bottom: 2em;
 }
@@ -77,12 +79,16 @@ div#lab div.lab_list table th{
   padding-left: 1em;
   padding-right: 1em;
 }
-
+div#lab div.lab_list table td{
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
 div#lab div.lab_list table th div.colored{
   color: red;
 }
 div.student_list{
-    font-size: 1.25em;
+    margin:auto;
+    font-size: 1.2em;
 }
 div.student_list table{
     text-align: center;
@@ -91,4 +97,8 @@ div.student_list table{
 div.student_list table th{
   padding-left: 1em;
   padding-right: 1em;
+}
+div.student_list table td{
+  font-size: 1.1em;
+  line-height: 2em;
 }

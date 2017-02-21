@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /students
   # GET /students.json
   def index
@@ -24,8 +24,11 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
+    if Student.find_by third: current_user.id
+      return if current_user.id != 1
+    end
     @student = Student.new(student_params)
-
+    @student.third = current_user.id
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }

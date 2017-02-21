@@ -13,6 +13,12 @@ gem 'sqlite3', group: :development
 # 本番ではpostgressを使用する
 gem 'pg', group: :production
 # Use Puma as the app server
+gem 'devise'
+
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

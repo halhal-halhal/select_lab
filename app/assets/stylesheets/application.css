@@ -1,15 +1,79 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+html{
+  width: 100% !important;
+  background-image: url(/assets/saidai.jpg);
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+}
+
+body{
+  margin-top: 8em;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 5em;
+   background-color: rgba(0,0,0,0.75);
+   color: white;
+}
+
+a{
+  color: rgba(120, 150, 255, 1);
+}
+a:visited{
+  color: rgba(120, 150, 255, 1);
+}
+
+div#header_nav{
+  z-index: 20;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-size: 1.5em;
+  padding: 1.25em;
+  background-color: rgba(0,0,0,0.8);
+}
+input{
+  color: black;
+}
+div#lab div.lab_list{
+  text-align: center;
+}
+div#lab div.lab_list div.lab_detail{
+  height: 30em;
+  border: 1px solid rgba(255,255,255,0.5);
+  margin-bottom: 2em;
+}
+div#lab div.lab_list table{
+  text-align: center;
+  margin: auto;
+}
+
+div#lab div.lab_list table th{
+  padding-left: 1em;
+  padding-right: 1em;
+}

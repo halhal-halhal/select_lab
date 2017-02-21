@@ -12,28 +12,40 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <label> 名前(表示用 匿名OK)</label>
     <%= f.text_field :name %>
   </div>
 
+    <div class="field">
+      <label> 学籍番号(非公開) </label>
+      <%= f.text_field :code %>
+    </div>
+
   <div class="field">
-    <%= f.label :rank %>
+    <%= f.label :順位 %>
     <%= f.number_field :rank %>
   </div>
 
   <div class="field">
-    <%= f.label :first %>
-    <%= f.number_field :first %>
+    <%= f.label :第1希望 %>
+    <select name="student[first]" id="student_first">
+      <% @labs.each do |lab| %>
+      <option value="<%= lab.id %>"><%= lab.name %>研究室</option>
+      <% end %>
+    </select>
   </div>
 
   <div class="field">
-    <%= f.label :second %>
-    <%= f.number_field :second %>
+    <%= f.label :第2希望 %>
+        <select name="student[second]" id="student_second">
+          <% @labs.each do |lab| %>
+          <option value="<%= lab.id %>"><%= lab.name %>研究室</option>
+          <% end %>
+        </select>
   </div>
 
   <div class="field">
-    <%= f.label :third %>
-    <%= f.number_field :third %>
+    <%= f.hidden_field :third %>
   </div>
 
   <div class="actions">

@@ -21,9 +21,10 @@
         <td><%= student.rank %></td>
         <td><%= Lab.find(student.first).name %>研究室</td>
         <td><% if student.second==nil%>未指定<%else%><%= Lab.find(student.second).name %>研究室<%end%></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if student.third == current_user.id || current_user.id == 1%>
+        <td><%= link_to '編集', edit_student_path(student) %></td>
+        <td><%= link_to '削除', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

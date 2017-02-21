@@ -10,6 +10,9 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    unless current_user.id == 1
+      redirect_to :back
+    end
   end
 
   # GET /students/new
@@ -19,11 +22,18 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+    if current_user.id != 1
+      if @student.third != current_user.id
+        redirect_to :back
+      end
+    end
+      @labs = Lab.all
   end
 
   # POST /students
   # POST /students.json
   def create
+    @labs = Lab.all
     if Student.find_by third: current_user.id
       return if current_user.id != 1
     end
@@ -43,6 +53,7 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
+    @labs = Lab.all
     respond_to do |format|
       if @student.update(student_params)
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
@@ -57,21 +68,25 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   # DELETE /students/1.json
   def destroy
-    @student.destroy
-    respond_to do |format|
-      format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.id != 1
+      if @student.third != current_user.id
+        @student.destroy
+        respond_to do |format|
+          format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
+          format.json { head :no_content }
+        end
+      end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_student
-      @student = Student.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_student
+    @student = Student.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def student_params
-      params.require(:student).permit(:name, :rank, :first, :second, :third)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def student_params
+    params.require(:student).permit(:name, :rank, :first, :second, :third, :code)
+  end
 end

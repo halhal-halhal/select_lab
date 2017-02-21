@@ -58,7 +58,7 @@
     </div>
   </div>
   <br>
-
+<%if current_user.id == 1%>
   <%= link_to 'New Lab', new_lab_path %>
-
+<% end %>
 </div>

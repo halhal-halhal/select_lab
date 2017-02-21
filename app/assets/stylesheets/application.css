@@ -81,7 +81,9 @@ div#lab div.lab_list table th{
 div#lab div.lab_list table th div.colored{
   color: red;
 }
-
+div.student_list{
+    font-size: 1.25em;
+}
 div.student_list table{
     text-align: center;
     margin-right: 2em;

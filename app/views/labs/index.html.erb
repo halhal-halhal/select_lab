@@ -14,16 +14,16 @@
           <p><%= lab.info %></p>
           <table>
             <tr>
-              <td>名前(匿名)</td>
-              <td>第2希望</td>
-              <td>順位</td>
+              <th>名前(匿名)</th>
+              <th>第2希望</th>
+              <th>順位</th>
             </tr>
             <% @num = 0 %>
             <% @students.each do |student| %>
             <% if student.first == lab.id %>
             <% @num += 1 %>
             <tr>
-              <th>
+              <td>
                 <% if @num > lab.cap %>
                 <div class="colored">
                   <% end %>
@@ -31,15 +31,20 @@
                   <% if @num > lab.cap %>
                 </div>
                 <% end %>
-              </th>
-              <th>
+              </td>
+              <td>
                 <% if student.second==nil%>未指定<%else%><%= Lab.find(student.second).name %>研究室<%end%>
-              </th>
-              <th>
+              </td>
+              <td>
                 <%= student.rank  %>
-              </th>
-            </th>
+              </td>
+            </td>
             <% end %>
+            <% end %>
+            <% if @num == 0 %>
+              <tr>
+                <td>なし</td>
+              </tr>
             <% end %>
           </table>
           <%if current_user.id == 1%>

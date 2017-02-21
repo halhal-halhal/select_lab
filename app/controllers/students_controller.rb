@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
         redirect_to :back
       end
     end
-      @labs = Lab.all
+    @labs = Lab.all
   end
 
   # POST /students
@@ -69,13 +69,11 @@ class StudentsController < ApplicationController
   # DELETE /students/1
   # DELETE /students/1.json
   def destroy
-    if current_user.id != 1
-      if @student.third != current_user.id
-        @student.destroy
-        respond_to do |format|
-          format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
-          format.json { head :no_content }
-        end
+    if current_user.id == 1 || @student.third == current_user.id
+      @student.destroy
+      respond_to do |format|
+        format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
+        format.json { head :no_content }
       end
     end
   end

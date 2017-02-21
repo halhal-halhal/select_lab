@@ -91,8 +91,9 @@ div.student_list{
     font-size: 1.2em;
 }
 div.student_list table{
+      margin:auto;
     text-align: center;
-    margin-right: 2em;
+
 }
 div.student_list table th{
   padding-left: 1em;

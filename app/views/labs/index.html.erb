@@ -42,9 +42,9 @@
             <% end %>
             <% end %>
             <% if @num == 0 %>
-              <tr>
-                <td>なし</td>
-              </tr>
+            <tr>
+              <td>なし</td>
+            </tr>
             <% end %>
           </table>
           <%if current_user.id == 1%>
@@ -56,9 +56,20 @@
       </div>
       <% end %>
     </div>
+    <hr>
+    <div class="row">
+      <h2>協力者(学籍番号)</h2>
+      <div class="code_list">
+        <% @students.order("code").each do |student| %>
+        <div class="col-md-2 col-xs-3">
+          <%= student.code %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
   <br>
-<%if current_user.id == 1%>
+  <%if current_user.id == 1%>
   <%= link_to 'New Lab', new_lab_path %>
-<% end %>
+  <% end %>
 </div>

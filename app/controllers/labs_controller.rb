@@ -4,6 +4,7 @@ class LabsController < ApplicationController
   # GET /labs
   # GET /labs.json
   def index
+    @users = User.all
     @labs = Lab.all
     @codes = Student.all.order("code")
     @students = Student.all.order("rank")

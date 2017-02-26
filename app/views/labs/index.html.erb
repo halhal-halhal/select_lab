@@ -60,7 +60,7 @@
     <div class="row">
       <h2>協力者(表示順番と順位/登録順等との関係なし)</h2>
       <div class="code_list">
-        <h4>計<%= @codes.length %>名</h4>
+        <h4>計<%= @codes.length %>名 (全登録者 <%= @users.length %>名, 見ているだけの人 <%= @users.length - @codes.length %>名) </h4>
         <% @codes.each do |student| %>
         <div class="col-md-2 col-xs-3">
           <%= student.code %>

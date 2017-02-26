@@ -93,7 +93,7 @@ div#lab div.lab_list table td{
   font-size: 1.2em;
   line-height: 1.5em;
 }
-div#lab div.lab_list table th div.colored{
+div#lab div.lab_list table td div.colored{
   color: red;
 }
 div.student_list{

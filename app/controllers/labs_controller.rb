@@ -5,7 +5,7 @@ class LabsController < ApplicationController
   # GET /labs.json
   def index
     @labs = Lab.all
-    @codes = Student.add.order("code")
+    @codes = Student.all.order("code")
     @students = Student.all.order("rank")
   end
 

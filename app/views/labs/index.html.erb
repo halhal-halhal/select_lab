@@ -27,7 +27,11 @@
                 <% if @num > lab.cap %>
                 <div class="colored">
                   <% end %>
+                  <%if current_user.id == 1%>
+                  <%= student.code  %>
+                  <% else %>
                   <%= student.name  %>
+                  <% end  %>
                   <% if @num > lab.cap %>
                 </div>
                 <% end %>

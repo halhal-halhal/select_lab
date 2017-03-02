@@ -19,7 +19,11 @@
     <tbody>
       <% @students.each do |student| %>
       <tr>
-        <td><%= student.name %></td>
+        <td><%if current_user.id == 1%>
+        <%= student.code  %>
+        <% else %>
+        <%= student.name  %>
+        <% end  %></td>
         <td><%= student.rank %></td>
         <td><%= Lab.find(student.first).name %>研究室</td>
         <td><% if student.second==nil%>未指定<%else%><%= Lab.find(student.second).name %>研究室<%end%></td>

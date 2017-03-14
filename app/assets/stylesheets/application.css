@@ -35,10 +35,10 @@ body{
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 5em;
-   background-color: rgba(0,0,0,0.75);
-   color: white;
-   font-size: 2em;
-   line-height: 1.2em;
+  background-color: rgba(0,0,0,0.75);
+  color: white;
+  font-size: 2em;
+  line-height: 1.2em;
 }
 
 a{
@@ -97,13 +97,12 @@ div#lab div.lab_list table td div.colored{
   color: red;
 }
 div.student_list{
-    margin:auto;
-    font-size: 1.2em;
+  margin:auto;
+  font-size: 1.2em;
 }
 div.student_list table{
-      margin:auto;
-    text-align: center;
-
+  margin:auto;
+  text-align: center;
 }
 div.student_list table th{
   padding-left: 1em;
@@ -119,7 +118,8 @@ div.student_list table td{
 div.code_list{
   border: 1px solid rgba(255,255,255,0.5);
   margin-top: 1em;
-  margin-bottom: 1em;
+  height: auto;
+  margin-bottom: 2em;
   padding-top: 1.5em;
   padding-bottom: 10em;
 }
